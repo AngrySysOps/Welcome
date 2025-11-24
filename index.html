@@ -57,6 +57,7 @@
     <section class="card hero">
       <h2>Start here</h2>
       <p class="kicker">Fixes, AI experiments, podcast episodes, and the <span class="mono">HackMeNow</span> game.</p>
+
       <div class="cta">
         <a class="btn" href="https://angrysysops.com" target="_blank">↗ Blog / Guides</a>
         <a class="btn" href="https://youtube.com/@AngryAdmin" target="_blank">▶ YouTube: AngryAdmin</a>
@@ -64,7 +65,10 @@
         <a class="btn" href="https://open.spotify.com/show/1qISFIuJXiYDF3WK6phlCb" target="_blank">🎧 Tech World Podcast</a>
         <a class="btn" href="https://github.com/AngrySysOps" target="_blank">{} GitHub</a>
         <a class="btn" href="https://techhub.social/@AngryAdmin" target="_blank">🐘 Mastodon</a>
-        <a class="btn" href="https://x.com/AngrySysOps" target="_blank">𝕏 On X</a>
+
+        <!-- updated X handler + label -->
+        <a class="btn" href="https://x.com/TheTechWorldPod" target="_blank">𝕏 X platform</a>
+
         <a class="btn" href="https://kickstarter.com/projects/hackmenow/hackmenow-a-terminal-style-hacking-puzzle-game" target="_blank">💥 HackMeNow Kickstarter</a>
       </div>
     </section>
@@ -93,15 +97,12 @@
     <section class="section">
       <h2>Latest video</h2>
 
-      <!-- 100% FIXED YOUTUBE INTEGRATION -->
-      <!-- Replace VIDEO_ID with your actual video ID -->
+      <!-- FIXED: Correct Uploads playlist ID -->
       <iframe 
-        src="https://www.youtube.com/embed?list=UUrtcKGl0neismSRpDMK_M4A"
+        src="https://www.youtube.com/embed?list=UUrTcKGl0neismSRpDMK_M4A"
         allowfullscreen 
         title="Latest video">
       </iframe>
-
-      <!-- Note: Using your CHANNEL'S Uploads feed ensures it always shows your latest video -->
     </section>
 
     <section class="section">
@@ -111,6 +112,7 @@
 
     <div class="footer">© <span id="y"></span> AngrySysOps • Dublin, Ireland</div>
   </div>
+
   <script>document.getElementById('y').textContent=new Date().getFullYear()</script>
 </body>
 </html>
