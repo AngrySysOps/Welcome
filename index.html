@@ -85,6 +85,11 @@
       border-radius:12px;
       box-shadow:var(--shadow);
     }
+    .yt-fallback{
+      font-size:.9rem;
+      color:var(--muted);
+      margin-top:6px;
+    }
   </style>
 
   <!-- Mastodon verification -->
@@ -126,47 +131,52 @@
     </section>
 
     <section class="section">
-  <h2>Featured projects</h2>
+      <h2>Featured projects</h2>
 
-  <div class="grid">
+      <div class="grid">
 
-    <div class="card" style="padding:16px">
-      <h3 style="margin:0 0 6px">vSphere &amp; NSX PowerCLI Scripts</h3>
-      <p class="kicker">
-        A growing collection of lab and production helpers: version checks, automation snippets, and troubleshooting tools.
-      </p>
-      <p><a href="https://github.com/AngrySysOps/scripts" target="_blank">Open <span class="mono">scripts</span> repo →</a></p>
-    </div>
+        <div class="card" style="padding:16px">
+          <h3 style="margin:0 0 6px">vSphere &amp; NSX PowerCLI Scripts</h3>
+          <p class="kicker">
+            A growing collection of lab and production helpers: version checks, automation snippets, and troubleshooting tools.
+          </p>
+          <p><a href="https://github.com/AngrySysOps/scripts" target="_blank">Open <span class="mono">scripts</span> repo →</a></p>
+        </div>
 
-    <div class="card" style="padding:16px">
-      <h3 style="margin:0 0 6px">VM Disk Encryption Automation</h3>
-      <p class="kicker">
-        PowerCLI workflow to encrypt large batches of VMs in vSphere with minimal manual work.
-      </p>
-      <p><a href="https://github.com/AngrySysOps/Data-at-rest-encryption-automation" target="_blank">Open automation repo →</a></p>
-    </div>
+        <div class="card" style="padding:16px">
+          <h3 style="margin:0 0 6px">VM Disk Encryption Automation</h3>
+          <p class="kicker">
+            PowerCLI workflow to encrypt large batches of VMs in vSphere with minimal manual work.
+          </p>
+          <p><a href="https://github.com/AngrySysOps/Data-at-rest-encryption-automation" target="_blank">Open automation repo →</a></p>
+        </div>
 
-    <div class="card" style="padding:16px">
-      <h3 style="margin:0 0 6px">Gmail Cleanup (PyQt5)</h3>
-      <p class="kicker">
-        A desktop tool to bulk-delete Gmail messages over IMAP. Local-only, safe, fast, and perfect for inbox cleanup.
-      </p>
-      <p><a href="https://github.com/AngrySysOps/Gmail_Cleanup" target="_blank">Open Gmail Cleanup repo →</a></p>
-    </div>
+        <div class="card" style="padding:16px">
+          <h3 style="margin:0 0 6px">Gmail Cleanup (PyQt5)</h3>
+          <p class="kicker">
+            A desktop tool to bulk-delete Gmail messages over IMAP. Local-only, safe, fast, and perfect for inbox cleanup.
+          </p>
+          <p><a href="https://github.com/AngrySysOps/Gmail_Cleanup" target="_blank">Open Gmail Cleanup repo →</a></p>
+        </div>
 
-  </div>
-</section>
+      </div>
 
+    </section>
 
     <section class="section">
       <h2>Latest video</h2>
 
-      <!-- Embed of a known public video from @AngryAdmin -->
+      <!-- Empty iframe – src will be filled by JS with your latest upload -->
       <iframe
-        src="https://www.youtube.com/embed/jj4Q-1NsHgM"
+        id="ytEmbed"
+        src=""
         allowfullscreen
-        title="Discover VMware vSphere 8 Update 3">
+        title="Latest video from AngryAdmin">
       </iframe>
+      <div class="yt-fallback">
+        If the player doesn’t load, watch directly on
+        <a href="https://www.youtube.com/@AngryAdmin/videos" target="_blank">YouTube</a>.
+      </div>
     </section>
 
     <section class="section">
@@ -183,7 +193,35 @@
   </div>
 
   <script>
+    // Footer year
     document.getElementById('y').textContent = new Date().getFullYear();
+
+    // Auto-load latest YouTube upload into the iframe
+    (function () {
+      const channelID = "UCRTcKGl0neismSRpDMK_M4A"; // AngryAdmin channel ID
+      const feedURL = "https://www.youtube.com/feeds/videos.xml?channel_id=" + channelID;
+      const apiURL = "https://api.rss2json.com/v1/api.json?rss_url=" + encodeURIComponent(feedURL);
+
+      fetch(apiURL)
+        .then(res => res.json())
+        .then(data => {
+          if (!data.items || !data.items.length) return;
+          const latest = data.items[0];
+          const link = latest.link || "";
+          const match = link.match(/v=([^&]+)/);
+          if (!match) return;
+
+          const videoID = match[1];
+          const iframe = document.getElementById("ytEmbed");
+          if (iframe) {
+            iframe.src = "https://www.youtube.com/embed/" + videoID;
+            iframe.title = latest.title || "Latest video from AngryAdmin";
+          }
+        })
+        .catch(err => {
+          console.error("Failed to load latest YouTube video:", err);
+        });
+    })();
   </script>
 </body>
 </html>
