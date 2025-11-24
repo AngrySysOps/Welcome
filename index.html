@@ -11,30 +11,80 @@
       --accent:#70b8ff; --ok:#80e27e; --warn:#ffd166; --r:18px; --shadow:0 8px 28px rgba(0,0,0,.35);
     }
     *{box-sizing:border-box}
-    body{margin:0;background:linear-gradient(180deg,var(--bg),var(--bg2));color:var(--text);
-      font:16px/1.55 system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,Arial}
+    body{
+      margin:0;
+      background:linear-gradient(180deg,var(--bg),var(--bg2));
+      color:var(--text);
+      font:16px/1.55 system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,Arial;
+    }
     a{color:var(--accent);text-decoration:none}
     .wrap{max-width:1000px;margin:0 auto;padding:40px 18px 80px}
     header{display:flex;align-items:center;gap:18px;margin-bottom:28px}
-    .avatar{width:72px;height:72px;border-radius:50%;box-shadow:var(--shadow);object-fit:cover}
+    .avatar{
+      width:72px;height:72px;border-radius:50%;
+      box-shadow:var(--shadow);object-fit:cover;
+    }
     h1{margin:.1rem 0 .2rem;font-size:1.9rem}
     .subtitle{color:var(--muted)}
-    .card{background:linear-gradient(180deg,rgba(255,255,255,.03),rgba(255,255,255,.01));
-      border:1px solid var(--b);border-radius:var(--r);box-shadow:var(--shadow)}
+    .card{
+      background:linear-gradient(180deg,rgba(255,255,255,.03),rgba(255,255,255,.01));
+      border:1px solid var(--b);
+      border-radius:var(--r);
+      box-shadow:var(--shadow);
+    }
     .hero{padding:28px}
     .badges{display:flex;flex-wrap:wrap;gap:10px;margin-top:12px}
-    .badge{padding:6px 10px;border:1px solid var(--b);border-radius:999px;color:var(--muted);font-size:.88rem}
-    .cta{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;margin:16px 0 6px}
-    .btn{display:flex;align-items:center;justify-content:center;gap:10px;padding:12px 14px;
-      border-radius:12px;border:1px solid var(--b);background:rgba(255,255,255,.02)}
-    .btn:hover{transform:translateY(-1px);transition:150ms;box-shadow:0 6px 20px rgba(0,0,0,.25)}
-    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px;margin-top:16px}
+    .badge{
+      padding:6px 10px;border:1px solid var(--b);
+      border-radius:999px;color:var(--muted);
+      font-size:.88rem;
+    }
+    .cta{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+      gap:14px;
+      margin:16px 0 6px;
+    }
+    .btn{
+      display:flex;align-items:center;justify-content:center;
+      gap:10px;
+      padding:12px 14px;
+      border-radius:12px;
+      border:1px solid var(--b);
+      background:rgba(255,255,255,.02);
+      text-align:center;
+    }
+    .btn:hover{
+      transform:translateY(-1px);
+      transition:150ms;
+      box-shadow:0 6px 20px rgba(0,0,0,.25);
+    }
+    .grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+      gap:16px;
+      margin-top:16px;
+    }
     .section{margin-top:28px}
     h2{font-size:1.2rem;margin:0 0 10px}
     .kicker{font-size:.93rem;color:var(--muted);margin-bottom:10px}
-    .footer{margin-top:26px;padding:14px;text-align:center;color:var(--muted);font-size:.92rem}
-    .mono{font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace}
-    iframe{width:100%;aspect-ratio:16/9;border:0;border-radius:12px;box-shadow:var(--shadow)}
+    .footer{
+      margin-top:26px;
+      padding:14px;
+      text-align:center;
+      color:var(--muted);
+      font-size:.92rem;
+    }
+    .mono{
+      font-family:ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace;
+    }
+    iframe{
+      width:100%;
+      aspect-ratio:16/9;
+      border:0;
+      border-radius:12px;
+      box-shadow:var(--shadow);
+    }
   </style>
 
   <!-- Mastodon verification -->
@@ -46,7 +96,10 @@
       <img class="avatar" src="https://avatars.githubusercontent.com/u/00000000?s=280" alt="AngrySysOps avatar" />
       <div>
         <h1>AngrySysOps (Piotr Tarnawski)</h1>
-        <div class="subtitle">Senior System Engineer • VMware • NSX • AI video labs • Creator of <span class="mono">HackMeNow</span></div>
+        <div class="subtitle">
+          Senior System Engineer • VMware / vSphere / NSX • Homelab &amp; AI video labs • Creator of
+          <span class="mono">HackMeNow</span>
+        </div>
         <div class="badges">
           <span class="badge">#VMware</span><span class="badge">#vSphere</span><span class="badge">#NSX</span>
           <span class="badge">#Homelab</span><span class="badge">#AI</span><span class="badge">#HackMeNow</span>
@@ -56,7 +109,9 @@
 
     <section class="card hero">
       <h2>Start here</h2>
-      <p class="kicker">Fixes, AI experiments, podcast episodes, and the <span class="mono">HackMeNow</span> game.</p>
+      <p class="kicker">
+        Fixes, AI experiments, podcast episodes, and the <span class="mono">HackMeNow</span> game.
+      </p>
 
       <div class="cta">
         <a class="btn" href="https://angrysysops.com" target="_blank">↗ Blog / Guides</a>
@@ -65,54 +120,78 @@
         <a class="btn" href="https://open.spotify.com/show/1qISFIuJXiYDF3WK6phlCb" target="_blank">🎧 Tech World Podcast</a>
         <a class="btn" href="https://github.com/AngrySysOps" target="_blank">{} GitHub</a>
         <a class="btn" href="https://techhub.social/@AngryAdmin" target="_blank">🐘 Mastodon</a>
-
-        <!-- updated X handler + label -->
-        <a class="btn" href="https://x.com/TheTechWorldPod" target="_blank">𝕏 </a>
-
+        <a class="btn" href="https://x.com/TheTechWorldPod" target="_blank">𝕏 X platform</a>
         <a class="btn" href="https://kickstarter.com/projects/hackmenow/hackmenow-a-terminal-style-hacking-puzzle-game" target="_blank">💥 HackMeNow Kickstarter</a>
       </div>
     </section>
 
     <section class="section">
       <h2>Featured projects</h2>
+
       <div class="grid">
+
         <div class="card" style="padding:16px">
-          <h3 style="margin:0 0 6px">HackMeNow — terminal-style hacking puzzle</h3>
-          <p class="kicker">Indie puzzle game with Linux-style terminal UI & cyber lore.</p>
-          <p><a href="https://github.com/AngrySysOps/HackMeNow" target="_blank">View repo →</a></p>
+          <h3 style="margin:0 0 6px">vSphere &amp; NSX PowerCLI Scripts</h3>
+          <p class="kicker">
+            A growing collection of lab and production helpers: version checks, automation snippets, and troubleshooting tools.
+          </p>
+          <p><a href="https://github.com/AngrySysOps/scripts" target="_blank">Open <span class="mono">scripts</span> repo →</a></p>
         </div>
+
         <div class="card" style="padding:16px">
-          <h3 style="margin:0 0 6px">VMware Scripts & Labs</h3>
-          <p class="kicker">PowerCLI, NSX notes, Aria Ops dashboards, vSphere fixes.</p>
-          <p><a href="https://github.com/AngrySysOps?tab=repositories&q=vmware" target="_blank">Browse repos →</a></p>
+          <h3 style="margin:0 0 6px">VM Disk Encryption Automation</h3>
+          <p class="kicker">
+            PowerCLI workflow to encrypt large batches of VMs in vSphere with minimal manual work.
+          </p>
+          <p><a href="https://github.com/AngrySysOps/Data-at-rest-encryption-automation" target="_blank">Open automation repo →</a></p>
         </div>
+
         <div class="card" style="padding:16px">
-          <h3 style="margin:0 0 6px">AI Video Labs</h3>
-          <p class="kicker">Sora / Veo prompts, shot lists, reusable production templates.</p>
-          <p><a href="https://github.com/AngrySysOps?tab=repositories&q=ai" target="_blank">See templates →</a></p>
+          <h3 style="margin:0 0 6px">AngryAdmin Storage Calculator</h3>
+          <p class="kicker">
+            JavaScript-based capacity calculator for quick storage sizing and what-if scenarios.
+          </p>
+          <p><a href="https://github.com/AngrySysOps/AngryAdminStorageCalculator" target="_blank">Open calculator →</a></p>
         </div>
+
+        <div class="card" style="padding:16px">
+          <h3 style="margin:0 0 6px">Gmail Cleanup (PyQt5)</h3>
+          <p class="kicker">
+            A desktop tool to bulk-delete Gmail messages over IMAP. Local-only, safe, fast, and perfect for inbox cleanup.
+          </p>
+          <p><a href="https://github.com/AngrySysOps/Gmail_Cleanup" target="_blank">Open Gmail Cleanup repo →</a></p>
+        </div>
+
       </div>
+
     </section>
 
     <section class="section">
       <h2>Latest video</h2>
 
-      <!-- FIXED: Correct Uploads playlist ID -->
-      <iframe 
-        src="https://www.youtube.com/AngryAdmin"
-        allowfullscreen 
-        title="Latest video">
+      <!-- Embed of a known public video from @AngryAdmin -->
+      <iframe
+        src="https://www.youtube.com/embed/jj4Q-1NsHgM"
+        allowfullscreen
+        title="Discover VMware vSphere 8 Update 3">
       </iframe>
     </section>
 
     <section class="section">
       <h2>Contact</h2>
-      <p class="kicker">For sponsors, press, or collabs: <a href="mailto:angrysysops@gmail.com">angrysysops@gmail.com</a></p>
+      <p class="kicker">
+        For sponsors, press, or collabs:
+        <a href="mailto:angrysysops&#64;gmail&#46;com">angrysysops&#64;gmail&#46;com</a>
+      </p>
     </section>
 
-    <div class="footer">© <span id="y"></span> AngrySysOps • Dublin, Ireland</div>
+    <div class="footer">
+      © <span id="y"></span> AngrySysOps • Dublin, Ireland
+    </div>
   </div>
 
-  <script>document.getElementById('y').textContent=new Date().getFullYear()</script>
+  <script>
+    document.getElementById('y').textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
